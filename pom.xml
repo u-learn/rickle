@@ -9,7 +9,6 @@
 	<modules>
 		<module>r-gateway</module>
 		<module>r-config-server</module>
-		<module>r-auth-server</module>
 		<module>r-email</module>
 		<module>r-common</module>
 	</modules>
