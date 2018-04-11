@@ -23,11 +23,6 @@ public class GatewayServerBootstrap {
   @Autowired
   private ReactiveMongoOperations mongoOperations;
 
-  @Bean
-  public MongoRouteDefinitionRepository routeDefinitionRepository() {
-    return new MongoRouteDefinitionRepository();
-  }
-
   /*@Bean
   public RouteLocator routeLocator(RouteLocatorBuilder builder) {
 
