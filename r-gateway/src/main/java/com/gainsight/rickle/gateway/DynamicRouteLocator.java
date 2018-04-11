@@ -36,6 +36,7 @@ public class DynamicRouteLocator implements RouteLocator, ApplicationEventPublis
     return collectRoutes();
   }
 
+  //ToDo: Add RateLimit here per route also define the same in Json
   private Flux<Route> collectRoutes() {
     Flux<Routes> customRoutes = mongoOperations.findAll(Routes.class);
     log.debug("Route List : " + customRoutes.collectList().block());

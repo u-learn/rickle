@@ -14,15 +14,16 @@ import org.springframework.security.web.server.SecurityWebFilterChain;
 /**
  * Created by Sunand on 08/04/18.
  */
-@EnableReactiveMongoRepositories
-@EnableWebFluxSecurity
 @EnableScheduling
+@EnableWebFluxSecurity
+@EnableReactiveMongoRepositories
 @SpringBootApplication
 public class GatewayServerBootstrap {
 
   @Autowired
   private ReactiveMongoOperations mongoOperations;
 
+  //This is static way of loading routes.
   /*@Bean
   public RouteLocator routeLocator(RouteLocatorBuilder builder) {
 
@@ -52,6 +53,7 @@ public class GatewayServerBootstrap {
 
   }*/
 
+  //ToDo: Enhance this to accept JWT token for all API Reuqests made.
   @Bean
   public SecurityWebFilterChain springWebFilterChain(ServerHttpSecurity http) {
     return http
@@ -61,8 +63,6 @@ public class GatewayServerBootstrap {
             .anyExchange().permitAll()
             .and()
             .httpBasic().disable().build();
-//            .and().build();
-//    return http.build();
   }
 
   public static void main(String[] args) {
