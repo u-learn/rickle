@@ -11,6 +11,7 @@
 		<module>r-config-server</module>
 		<module>r-email</module>
 		<module>r-common</module>
+		<module>r-persistence</module>
 	</modules>
 	<packaging>pom</packaging>
 
@@ -65,6 +66,11 @@
             <artifactId>lombok</artifactId>
             <version>RELEASE</version>
         </dependency>
+		<dependency>
+			<groupId>org.apache.commons</groupId>
+			<artifactId>commons-lang3</artifactId>
+			<version>LATEST</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.springframework.boot</groupId>

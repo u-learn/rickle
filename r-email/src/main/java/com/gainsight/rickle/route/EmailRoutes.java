@@ -8,7 +8,8 @@ import org.springframework.web.reactive.function.server.RequestPredicates;
 import org.springframework.web.reactive.function.server.RouterFunction;
 import org.springframework.web.reactive.function.server.RouterFunctions;
 
-import static org.springframework.web.reactive.function.server.RequestPredicates.*;
+import static org.springframework.web.reactive.function.server.RequestPredicates.GET;
+import static org.springframework.web.reactive.function.server.RequestPredicates.accept;
 
 /**
  * Created by Sunand on 11/04/18.
@@ -21,7 +22,7 @@ public class EmailRoutes {
     return RouterFunctions.
             route(GET("/parse/").and(accept(MediaType.ALL)), handler::hello)
             .andRoute(GET("/hello").and(accept(MediaType.ALL)), handler::hello)
-            .andNest(path("/email"), RouterFunctions.route(RequestPredicates.all(), handler::hello))
+            .andRoute(GET("/routes").and(accept(MediaType.APPLICATION_JSON)), handler::routes)
             .andOther(RouterFunctions.route(RequestPredicates.all(), handler::other));
   }
 }
