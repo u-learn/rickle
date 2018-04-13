@@ -4,15 +4,14 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>r-persistence</artifactId>
-        <groupId>com.gainsight.rickle</groupId>
+        <groupId>com.ulearn.rickle</groupId>
         <version>0.0.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>com.gainsight.rickle</groupId>
+    <groupId>com.ulearn.rickle</groupId>
     <artifactId>r-mongo</artifactId>
+
     <dependencies>
     </dependencies>
-
-
 </project>
