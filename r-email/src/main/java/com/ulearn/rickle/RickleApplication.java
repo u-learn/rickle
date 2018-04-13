@@ -1,6 +1,6 @@
 package com.ulearn.rickle;
 
-import com.gainsight.rickle.mongo.MongoConfig;
+import com.ulearn.rickle.mongo.MongoConfig;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +12,7 @@ import org.springframework.web.reactive.config.EnableWebFlux;
 @EnableWebFlux
 @Import(MongoConfig.class)
 //@EnableReactiveMongoRepositories
-@SpringBootApplication(scanBasePackages = "com.gainsight.rickle")
+@SpringBootApplication(scanBasePackages = "com.ulearn.rickle")
 public class RickleApplication {
 
 	public static void main(String[] args) {
