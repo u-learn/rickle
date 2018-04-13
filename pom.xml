@@ -9,7 +9,7 @@
 	<modules>
 		<module>r-gateway</module>
 		<module>r-config-server</module>
-		<module>r-email</module>
+		<module>r-infra</module>
 		<module>r-common</module>
 		<module>r-persistence</module>
 	</modules>

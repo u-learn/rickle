@@ -7,6 +7,6 @@ import org.springframework.data.mongodb.repository.config.EnableReactiveMongoRep
  * Created by Sunand on 12/04/18.
  */
 @Configuration
-@EnableReactiveMongoRepositories(basePackages = "com.gainsight.rickle", repositoryBaseClass = CustomReactiveMongoRepository.class)
+@EnableReactiveMongoRepositories(basePackages = "com.ulearn.rickle", repositoryBaseClass = CustomReactiveMongoRepository.class)
 public class MongoConfig {
 }
