@@ -22,7 +22,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>com.ulearn.rickle</groupId>
+            <groupId>com.ulearn.rickle.nosql</groupId>
             <artifactId>r-mongo</artifactId>
             <version>${project.version}</version>
         </dependency>

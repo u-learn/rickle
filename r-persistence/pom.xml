@@ -15,6 +15,7 @@
 
     <modules>
         <module>r-mongo</module>
+        <module>r-postgresql</module>
     </modules>
 
     <dependencies>

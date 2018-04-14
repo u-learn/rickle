@@ -12,7 +12,8 @@
 		<module>r-infra</module>
 		<module>r-common</module>
 		<module>r-persistence</module>
-	</modules>
+        <module>r-config-client</module>
+    </modules>
 	<packaging>pom</packaging>
 
 	<name>rickle</name>
