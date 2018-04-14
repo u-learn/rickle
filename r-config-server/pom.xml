@@ -23,9 +23,21 @@
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-config-server</artifactId>
         </dependency>
+
         <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter</artifactId>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-config-monitor</artifactId>
+        </dependency>
+
+        <!--
+            Needed, otherwise:
+            Cannot create binder factory, no `META-INF/spring.binders` resources found on the classpath
+            Also added META-INF/spring.binders=rabbit:org.springframework.cloud.stream.binder.rabbit.config.RabbitServiceAutoConfiguration
+            Mostly a bug in spring cloud stream rabbit dependency
+         -->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-stream-rabbit</artifactId>
         </dependency>
     </dependencies>
 </project>
