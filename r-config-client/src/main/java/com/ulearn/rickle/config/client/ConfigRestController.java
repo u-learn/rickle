@@ -1,6 +1,6 @@
 package com.ulearn.rickle.config.client;
 
-import org.springframework.beans.factory.annotation.Value;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.context.config.annotation.RefreshScope;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -14,28 +14,19 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping(("/config"))
 class ConfigRestController {
 
-    @Value("${root.mongo.db}")
-    private String mongodb;
-    @Value("${root.mongo.host}")
-    private String host;
-    @Value("${root.mongo.port}")
-    private int port;
-    @Value("${root.mongo.connection.pool}")
-    private int pool;
-    @Value("${root.mongo.ssl.enable}")
-    private boolean ssl;
-
-    @Value("${greeting}")
-    private String greeting;
+    @Autowired
+    RickleProperties rickleProperties;
 
     @RequestMapping("/mongo")
     public String getMongoConfigDetails() {
-        return "mongo://" + host + ":" + port + "/" + mongodb + "?connectionPool=" + pool + "&ssl=" + ssl;
+//        return "mongo://" + host + ":" + port + "/" + mongodb + "?connectionPool=" + pool + "&ssl=" + ssl;
+        return "mongo://" + rickleProperties.getHost() + ":" + rickleProperties.getPort() + "/" + rickleProperties.getMongodb()
+                + "?connectionPool=" + rickleProperties.getPool() + "&ssl=" + rickleProperties.isSsl();
     }
 
     @RequestMapping("/greet/{user}")
     public String greetUser(@PathVariable("user") String user) {
-        return greeting + " " + user;
+        return rickleProperties.getGreeting() + " " + user;
     }
 
 
